@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './index.css'
 
 function Header(props) {
     return <h1>{props.message}</h1>
@@ -10,7 +11,7 @@ function TodoItem(props) {
         <li className="todo-item">
             <div className="item-container">
                 <p>{props.title}</p>
-                <button className="item-delete-btn" id={props.id} onClick={props.onClick}>Delete</button>
+                <button className="item-delete-btn" id={props.id} onClick={props.onClick}><i className="fas fa-trash-alt"></i></button>
             </div>
         </li>
     )
@@ -80,6 +81,7 @@ class TodoApp extends React.Component {
 
         return (
             <div className="todo-container">
+                <Header message="Todo App"/>
                 <div className="todo-form">
                     <ul>{taskComponents}</ul>
                     <TaskInput onSubmit={this.handleSubmit} />
@@ -91,7 +93,6 @@ class TodoApp extends React.Component {
 
 ReactDOM.render(
     <React.StrictMode>
-        <Header message="Todo App"/>
         <TodoApp/>
     </React.StrictMode>,
     document.getElementById('root')
