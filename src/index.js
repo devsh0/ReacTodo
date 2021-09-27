@@ -2,8 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css'
 
-function Header(props) {
-    return <h1>{props.message}</h1>
+function TodoHeader() {
+    return (
+        <div className="todo-header">
+            <h4>Todo Application</h4>
+        </div>
+    );
 }
 
 function TodoItem(props) {
@@ -11,7 +15,8 @@ function TodoItem(props) {
         <li className="todo-item">
             <div className="item-container">
                 <p>{props.title}</p>
-                <button className="item-delete-btn" id={props.id} onClick={props.onClick}><i className="fas fa-trash-alt"></i></button>
+                <button className="item-delete-btn" id={props.id} onClick={props.onClick}><i
+                    className="fas fa-trash-alt"></i></button>
             </div>
         </li>
     )
@@ -36,7 +41,8 @@ class TaskInput extends React.Component {
     render() {
         return (
             <div className="input-form-container">
-                <input type="text" placeholder="Task" id="item-input" value={this.state.inputValue} onChange={evt => this.handleInputChange(evt)}/>
+                <input type="text" placeholder="Task" id="item-input" value={this.state.inputValue}
+                       onChange={evt => this.handleInputChange(evt)}/>
                 <button id="todo-submit" onClick={this.handleSubmit}>Add</button>
             </div>
         );
@@ -47,8 +53,13 @@ class TodoApp extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            tasks: [],
-            nextTaskId: 1,
+            tasks: [
+                {id: 1, title: 'Write an MP3 decoder.'},
+                {id: 2, title: 'Write a Vorbis decoder.'},
+                {id: 3, title: 'Write an Opus decoder.'},
+                {id: 4, title: 'Finally, write a decoder for AVC-10.'}
+            ],
+            nextTaskId: 5,
         }
         this.inputElementRef = React.createRef();
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -80,11 +91,13 @@ class TodoApp extends React.Component {
         });
 
         return (
-            <div className="todo-container">
-                <Header message="Todo App"/>
-                <div className="todo-form">
-                    <ul>{taskComponents}</ul>
-                    <TaskInput onSubmit={this.handleSubmit} />
+            <div className="container">
+                <TodoHeader/>
+                <div className="todo-list-container">
+                    <div className="todo-form">
+                        <ul>{taskComponents}</ul>
+                        <TaskInput onSubmit={this.handleSubmit}/>
+                    </div>
                 </div>
             </div>
         );
