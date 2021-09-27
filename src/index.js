@@ -5,7 +5,7 @@ import './index.css'
 function TodoHeader() {
     return (
         <div className="todo-header">
-            <h4>Todo Application</h4>
+            <p>Todo Application</p>
         </div>
     );
 }
@@ -20,6 +20,18 @@ function TodoItem(props) {
             </div>
         </li>
     )
+}
+
+class NewTaskButton extends React.Component {
+    render() {
+        return (
+            <div className="new-task-btn-container">
+                <button className="btn-new-task">
+                    <span><i className="fas fa-plus"></i></span>New Task
+                </button>
+            </div>
+        );
+    }
 }
 
 class TaskInput extends React.Component {
@@ -98,6 +110,7 @@ class TodoApp extends React.Component {
                         <ul>{taskComponents}</ul>
                         <TaskInput onSubmit={this.handleSubmit}/>
                     </div>
+                    <NewTaskButton />
                 </div>
             </div>
         );
