@@ -49,6 +49,8 @@ body {
     margin: 0;
     display: flex;
     align-items: center;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 .item-container button {
@@ -57,7 +59,8 @@ body {
     justify-content: center;
     align-items: center;
     color: #444;
-    width: 30px;
+    min-width: 30px;
+    margin-left: 5px;
     height: 30px;
     background: transparent;
     border: 1px solid #c5c4c4;
