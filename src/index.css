@@ -7,7 +7,7 @@ body {
 }
 
 #root {
-    background: #f5f2f2;
+    background: rgba(224, 242, 241, 0.7);
     position: relative;
     width: 100%;
     height: 100vh;
@@ -20,8 +20,8 @@ body {
     width: 25%;
     min-height: 25%;
     padding: 2em;
-    background: #fcfcfd;
-    box-shadow: 0 2px 8px -4px;
+    background: rgba(250, 250, 250, .8);
+    box-shadow: 0 0 10px 0 rgba(50, 50, 50, 0.1);
     /*border: 1px solid magenta;*/
 }
 
