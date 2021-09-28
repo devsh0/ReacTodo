@@ -57,10 +57,11 @@ class TodoApp extends React.Component {
                 {id: 1, title: 'Write an MP3 decoder.'},
                 {id: 2, title: 'Write a Vorbis decoder.'},
                 {id: 3, title: 'Write an Opus decoder.'},
+                {id: 4, title: 'Write an AVC-10 decoder.'},
             ],
             nextTaskId: 5,
         }
-        this.inputElementRef = React.createRef();
+
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
