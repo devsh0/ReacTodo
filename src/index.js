@@ -22,18 +22,6 @@ function TodoItem(props) {
     )
 }
 
-class NewTaskButton extends React.Component {
-    render() {
-        return (
-            <div className="new-task-btn-container">
-                <button className="btn-new-task">
-                    <span><i className="fas fa-plus"></i></span>New Task
-                </button>
-            </div>
-        );
-    }
-}
-
 class TaskInput extends React.Component {
     constructor(props) {
         super(props);
@@ -69,7 +57,6 @@ class TodoApp extends React.Component {
                 {id: 1, title: 'Write an MP3 decoder.'},
                 {id: 2, title: 'Write a Vorbis decoder.'},
                 {id: 3, title: 'Write an Opus decoder.'},
-                {id: 4, title: 'Finally, write a decoder for AVC-10.'}
             ],
             nextTaskId: 5,
         }
@@ -110,7 +97,6 @@ class TodoApp extends React.Component {
                         <ul>{taskComponents}</ul>
                         <TaskInput onSubmit={this.handleSubmit}/>
                     </div>
-                    <NewTaskButton />
                 </div>
             </div>
         );
